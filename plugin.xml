@@ -1,16 +1,42 @@
 <?xml version='1.0' encoding='utf-8'?>
 <plugin id="com.github.josephma93.aboutscreen" version="0.0.1" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
-    <name>aboutScreen</name>
-    <js-module name="aboutScreen" src="www/aboutScreen.js">
-        <clobbers target="cordova.plugins.aboutScreen" />
+    <name>AboutScreen</name>
+
+    <description>
+        This plugin allows you get information related to device screen.
+        You shoud be able to get: Screen width, screen height, screen diagonal screen size (in inches), screen resolution PPI (also known as DPI)
+        Android is fully supported, iOS will be added soon.
+    </description>
+
+    <author>Joseph Montero</author>
+
+    <license>MIT</license>
+
+    <keywords>Screen, Android, Resolution, Diagonal, Size</keywords>
+
+    <repo>https://github.com/josephma93/about-screen.git</repo>
+
+    <issue>https://github.com/josephma93/about-screen/issues</issue>
+
+    <engines>
+        <engine name="cordova" version=">=3.0.0"/>
+    </engines>
+
+
+    <js-module name="AboutScreen" src="www/AboutScreen.js">
+        <clobbers target="window.plugins.aboutScreen" />
     </js-module>
+
+    <!-- Android -->
     <platform name="android">
-        <config-file parent="/*" target="res/xml/config.xml">
-            <feature name="aboutScreen">
-                <param name="android-package" value="com.github.josephma93.aboutscreen.aboutScreen" />
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="AboutScreen">
+                <param name="android-package" value="com.github.josephma93.aboutscreen.AboutScreen" />
             </feature>
         </config-file>
-        <config-file parent="/*" target="AndroidManifest.xml"></config-file>
-        <source-file src="src/android/AboutScreen.java" target-dir="src/com/github/josephma93/aboutscreen/AboutScreen" />
+        <config-file target="AndroidManifest.xml" parent="/*"></config-file>
+
+        <source-file src="src/android/AboutScreen.java" target-dir="src/com/github/josephma93/aboutscreen" />
     </platform>
+
 </plugin>
