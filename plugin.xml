@@ -1,7 +1,16 @@
 <?xml version='1.0' encoding='utf-8'?>
 <plugin id="com.github.josephma93.aboutscreen" version="0.0.1" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
-    <name>About screen</name>
-    <js-module name="about_screen" src="www/about_screen.js">
-        <clobbers target="cordova.plugins.about_screen" />
+    <name>aboutScreen</name>
+    <js-module name="aboutScreen" src="www/aboutScreen.js">
+        <clobbers target="cordova.plugins.aboutScreen" />
     </js-module>
+    <platform name="android">
+        <config-file parent="/*" target="res/xml/config.xml">
+            <feature name="aboutScreen">
+                <param name="android-package" value="com.github.josephma93.aboutscreen.aboutScreen" />
+            </feature>
+        </config-file>
+        <config-file parent="/*" target="AndroidManifest.xml"></config-file>
+        <source-file src="src/android/AboutScreen.java" target-dir="src/com/github/josephma93/aboutscreen/AboutScreen" />
+    </platform>
 </plugin>
