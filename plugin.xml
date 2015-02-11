@@ -38,5 +38,15 @@
 
         <source-file src="src/android/AboutScreen.java" target-dir="src/com/github/josephma93/aboutscreen" />
     </platform>
-
+	
+	<platform name="ios">
+		<config-file target="config.xml" parent="/*">
+			<feature name="AboutScreen">
+				<paran name="ios-package" value="AboutScreen" />
+			</feature>
+		</config-file>
+		
+		<header-file src="src/ios/AboutScreen.h" />
+		<source-file src="src/ios/AboutScreen.m" />
+	</platform>
 </plugin>
